@@ -14,6 +14,7 @@
         text-align: left;
         min-width: 100px;
         word-wrap: break-word;
+		white-space: nowrap;
     }
 
     table.responsive-table th {
@@ -88,7 +89,7 @@
 	
 				<?php 
 					$no = 1;
-					$aspirasi = mysqli_query($koneksi,"SELECT * FROM aspirasi INNER JOIN siswa ON aspirasi.nis=siswa.nis INNER JOIN tanggapan ON aspirasi.id_aspirasi=tanggapan.id_aspirasi WHERE aspirasi.nis='".$_SESSION['data']['nis']."' ORDER BY aspirasi.id_aspirasi DESC");
+					$aspirasi = mysqli_query($koneksi,"SELECT * FROM aspirasi INNER JOIN siswa ON aspirasi.nis=siswa.nis LEFT JOIN tanggapan ON aspirasi.id_aspirasi=tanggapan.id_aspirasi WHERE aspirasi.nis='".$_SESSION['data']['nis']."' AND (aspirasi.status = 'selesai' OR tanggapan.id_aspirasi IS NULL) ORDER BY aspirasi.id_aspirasi DESC");
 					while ($r = mysqli_fetch_assoc($aspirasi)) { ?>
 						<tr>
 							<td><?php echo $no++; ?></td>

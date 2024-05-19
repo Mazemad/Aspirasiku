@@ -33,15 +33,15 @@ CREATE TABLE `siswa` (
   `nama` varchar(35) NOT NULL,
   `username` varchar(25) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `telp` varchar(13) NOT NULL
+  `email` varchar(13) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `siswa`
 --
 
-INSERT INTO `siswa` (`nis`, `nama`, `username`, `password`, `telp`) VALUES
-('1376012310010005', 'Aqil Rahman', 'siswa', 'd9a8c6c010a37fdc9850fe6d8c064880', '085364287180');
+INSERT INTO `siswa` (`nis`, `nama`, `username`, `password`, `email`) VALUES
+('1376012310010005', 'Aqil Rahman', 'siswa', 'd9a8c6c010a37fdc9850fe6d8c064880', 'aqil@gmail.com');
 
 -- --------------------------------------------------------
 

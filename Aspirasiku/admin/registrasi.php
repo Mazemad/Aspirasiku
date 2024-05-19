@@ -90,7 +90,7 @@
 					<th>NIS</th>
 					<th>Nama</th>
 					<th>Username</th>
-					<th>Telp</th>
+					<th>Email</th>
                 	<th>Opsi</th>
               </tr>
           </thead>
@@ -105,7 +105,7 @@
 			<td><?php echo $r['nis']; ?></td>
 			<td><?php echo $r['nama']; ?></td>
 			<td><?php echo $r['username']; ?></td>
-			<td><?php echo $r['telp']; ?></td>
+			<td><?php echo $r['email']; ?></td>
 			<td><a class="btn blue modal-trigger" href="#regis_edit?nis=<?php echo $r['nis'] ?>">Edit</a> <a onclick="return confirm('Anda Yakin Ingin Menghapus Y/N')" class="btn red" href="index.php?p=regis_hapus&nis=<?php echo $r['nis'] ?>">Hapus</a></td>
 
 <!-- ------------------------------------------------------------------------------------------------------------------------------------ -->

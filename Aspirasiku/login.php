@@ -1,3 +1,6 @@
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" href="css/materialize.css">
+<link rel="stylesheet" href="css/responsive.css">
 <style>
    .cont {
       padding: 50px;
@@ -6,7 +9,6 @@
       margin-top: 10%;
       background-color: rgba(50, 50, 50, 0.1); /* Nilai alpha (0.7) menentukan tingkat transparansi */
       border-radius: 10px; /* Untuk membuat sudut kotak */
-	  <style>
    }
 	    /* Tambahkan media queries untuk ukuran layar tertentu */
     @media screen and (max-width: 768px) {
@@ -15,8 +17,7 @@
         }
 	}
 </style>
-
-</style>
+<body style="background: url(img/bgweb.jpg); background-size: cover;">
 <div class="cont">
 <h3 style="text-align: center;" class="blue-text">Menu Login</h3>
 <br><center><p>Dikembangkan oleh <a href='https://bit.ly/mpkbegarlist' title='MPK SMAN 2 Magelang' target='_blank'>MPK SMAN 2 Magelang</a></p></center>
@@ -27,13 +28,26 @@
 			<input id="username" type="text" name="username" required>
 		</div>
 		<div class="input_field">
-			<label for="password">Passowrd</label>
+			<label for="password">Password</label>
 			<input id="password" type="password" name="password" required>
 		</div>
 		<input type="submit" name="login" value="Login" class="btn blue" style="width: 100%;">
 	</form>
+	<center><p>Belum punya akun? <a href=signup.php >Daftar Disini</a></p></center>
 </div>
 <?php 
+	$servername = "localhost";
+	$username = "root"; // Ganti dengan username database Anda
+	$password = ""; // Ganti dengan password database Anda
+	$dbname = "aspirasiku";
+	
+	// Membuat koneksi
+	$koneksi = new mysqli($servername, $username, $password, $dbname);
+	
+	// Memeriksa koneksi
+	if ($koneksi->connect_error) {
+		die("Koneksi gagal: " . $koneksi->connect_error);
+	}
 	if(isset($_POST['login'])){
 		$username = mysqli_real_escape_string($koneksi,$_POST['username']);
 		$password = mysqli_real_escape_string($koneksi,md5($_POST['password']));
@@ -72,4 +86,5 @@
 		}
 
 	}
- ?>
+?>
+</body>
